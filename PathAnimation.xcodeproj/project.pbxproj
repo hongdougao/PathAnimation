@@ -14,6 +14,7 @@
 		0419FC611B1E875A000410B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0419FC601B1E875A000410B4 /* Images.xcassets */; };
 		0419FC641B1E875A000410B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0419FC621B1E875A000410B4 /* LaunchScreen.xib */; };
 		0419FC701B1E875A000410B4 /* PathAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419FC6F1B1E875A000410B4 /* PathAnimationTests.m */; };
+		0419FC8D1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419FC8C1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		0419FC691B1E875A000410B4 /* PathAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0419FC6E1B1E875A000410B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0419FC6F1B1E875A000410B4 /* PathAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathAnimationTests.m; sourceTree = "<group>"; };
+		0419FC8B1B1EDC0B000410B4 /* UIButton+MSPathAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MSPathAnimation.h"; sourceTree = "<group>"; };
+		0419FC8C1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MSPathAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				0419FC581B1E875A000410B4 /* AppDelegate.m */,
 				0419FC5A1B1E875A000410B4 /* ViewController.h */,
 				0419FC5B1B1E875A000410B4 /* ViewController.m */,
+				0419FC8B1B1EDC0B000410B4 /* UIButton+MSPathAnimation.h */,
+				0419FC8C1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m */,
 				0419FC5D1B1E875A000410B4 /* Main.storyboard */,
 				0419FC601B1E875A000410B4 /* Images.xcassets */,
 				0419FC621B1E875A000410B4 /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 				0419FC5C1B1E875A000410B4 /* ViewController.m in Sources */,
 				0419FC591B1E875A000410B4 /* AppDelegate.m in Sources */,
 				0419FC561B1E875A000410B4 /* main.m in Sources */,
+				0419FC8D1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
