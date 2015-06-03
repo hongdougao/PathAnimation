@@ -29,11 +29,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     btnPush = NO;
     
-    _btnA.layer.cornerRadius = 10;
-    _btnB.layer.cornerRadius = 10;
-    _btnC.layer.cornerRadius = 10;
-    _btnD.layer.cornerRadius = 10;
-    _btnE.layer.cornerRadius = 10;
+    _btnA.layer.cornerRadius = 8;
+    _btnB.layer.cornerRadius = 8;
+    _btnC.layer.cornerRadius = 8;
+    _btnD.layer.cornerRadius = 8;
+    _btnE.layer.cornerRadius = 8;
     
     _btnA.tag = BTN_TAG + 1;
     _btnB.tag = BTN_TAG + 2;
@@ -48,6 +48,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)menuBtnPush:(id)sender {
+    [_bottomBtn setEnabled:NO];
+    
+
     
     CGFloat fromFloat ;
     CGFloat toValue;
@@ -61,7 +64,11 @@
         [self moveToOrigin:_btnE];
         
  
-        
+        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 *NSEC_PER_SEC));
+        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+            [_bottomBtn setEnabled:YES];
+            
+        });
        
         fromFloat = 0.0;
         toValue = M_PI / 4;
@@ -76,7 +83,11 @@
         [self MoveToTop:_btnE];
 
      
-       
+        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 *NSEC_PER_SEC));
+        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+            [_bottomBtn setEnabled:YES];
+            
+        });
         
         fromFloat = M_PI / 4;
         toValue = 0.0;
@@ -175,15 +186,15 @@
             
             UIButton *btn = (UIButton *)[anim valueForKey:@"animationObj"];
             [self turnAroundBtn:btn WithFromValue:- M_PI / 2 andToValue:M_PI * 1 andRotation:0 andDuration:0.3];
- 
+
+            
         }else if ([name isEqualToString:@"turnAroundBtn"] ){
             if (![[anim valueForKey:@"animationObj"] isEqual:_bottomBtn]) {
-
+                NSLog(@"turnAroundBtn finished");
             }
         
         }
      }
-
 }
 
 - (void)turnAroundBtn:(UIButton *)btn WithFromValue:(CGFloat)fromValue andToValue:(CGFloat  )toValue andRotation:(CGFloat)rotation andDuration:(CFTimeInterval)duration{
@@ -202,9 +213,12 @@
     [btn  setTransform:CGAffineTransformMakeRotation(rotation)];
     
     if (![btn isEqual:_bottomBtn]) {
+       
         [self.view setBackgroundColor:[UIColor lightGrayColor]];
+        
 
     }
+    
 
 }
 

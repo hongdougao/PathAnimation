@@ -58,6 +58,7 @@
                                 <state key="normal" image="chooser-button-tab.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" image="chooser-button-tab.png"/>
                                 <connections>
                                     <action selector="menuBtnPush:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eFY-aX-SsT"/>
                                 </connections>
