@@ -7,13 +7,16 @@
 //
 
 #import "ViewController.h"
+
 #import "UIButton+MSPathAnimation.h"
+#import "UITableView+MSWave.h"
 #define  BTN_TAG 1000
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     BOOL btnPush;
 }
-
+@property (weak, nonatomic) IBOutlet UITableView *aTB;
+ 
 @property (weak, nonatomic) IBOutlet UIButton *bottomBtn;
 @property (weak, nonatomic) IBOutlet UIButton *btnA;
 @property (weak, nonatomic) IBOutlet UIButton *btnB;
@@ -41,6 +44,10 @@
     btnPush = NO;
     [self.blackView setAlpha:0.0];
     [self giveTagAndRadius];
+    
+    
+    self.aTB.delegate = self;
+    self.aTB.dataSource = self;
 
 }
 - (void)giveTagAndRadius{
@@ -52,13 +59,29 @@
     }
 
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 20;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identify = @"tableviewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"第%ld 行",(long)indexPath.row+1];
+    return cell;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)menuBtnPush:(id)sender {
-//    [_bottomBtn setEnabled:NO];
+    [_aTB msTbWaving];
 
     CGFloat fromFloat ;
     CGFloat toValue;
@@ -88,11 +111,7 @@
     }
     
     [sender turnAroundSelfWithFromValue:fromFloat andToValue:toValue andRotation:rotation andDuration:0.1];
-//    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSecond *NSEC_PER_SEC));
-//    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-//        [_bottomBtn setEnabled:YES];
-//        
-//    });
+ 
     btnPush = !btnPush;
     
     
@@ -103,16 +122,7 @@
     NSArray *btnArr = @[_btnA,_btnB,_btnC,_btnD,_btnE];
     for (int i = 0; i < btnArr.count ; i++) {
         UIButton *btn = btnArr[i];
-  
-    
-//    CAAnimationGroup *group = [CAAnimationGroup animation];
-//    [group setBeginTime:CACurrentMediaTime()  ];
-//    [group setDuration:0.1];
-//    [group setFillMode:kCAFillModeBackwards];
-//    [group setDelegate:self];
-   
-//    CABasicAnimation *animationTop = [CABasicAnimation animationWithKeyPath:@"position"];
-//    [animationTop setFromValue:[NSValue valueWithCGPoint:_bottomBtn.center]];
+ 
     int positionX;
     int positionY;
     switch (btn.tag  - BTN_TAG) {
@@ -141,19 +151,7 @@
             break;
     }
     
-//    [animationTop setToValue:[NSValue valueWithCGPoint:CGPointMake( CGRectGetMaxX(_bottomBtn.frame) + positionX, CGRectGetMaxY(_bottomBtn.frame)  +positionY) ]];
-    
  
-//    CABasicAnimation *animationAppear = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    [animationAppear setFromValue:[NSNumber numberWithDouble:0.0]];
-//    [animationAppear setToValue:[NSNumber numberWithDouble:1.0]];
-    
-//    group.animations = @[animationTop ,   animationAppear  ];
-//    [group setValue:@"topAnimation" forKey:@"name"];
-//    [group setValue:btn forKey:@"animationObj"];
-//    
-//    [btn.layer addAnimation:group forKey:nil];
-//    btn.frame = CGRectMake(CGRectGetMaxX(btn.frame) + positionX - 30/2, CGRectGetMaxY(btn.frame)  +positionY - 30/2, CGRectGetWidth(btn.frame), CGRectGetHeight(btn.frame));
       
         [UIView animateWithDuration:0.2 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0.0 options: UIViewAnimationOptionTransitionNone animations:^{
                 btn.frame = CGRectMake(CGRectGetMaxX(btn.frame) + positionX - 30/2, CGRectGetMaxY(btn.frame)  +positionY - 30/2, CGRectGetWidth(btn.frame), CGRectGetHeight(btn.frame));

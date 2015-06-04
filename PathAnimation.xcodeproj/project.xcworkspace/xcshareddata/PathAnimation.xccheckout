@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>38844506-6832-42BF-8624-873BCFD248D6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PathAnimation</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3B3EB1EA3BADD3B42493710497920218EA63A924</key>
 		<string>https://github.com/hongdougao/PathAnimation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PathAnimation.xcodeproj/project.xcworkspace</string>
+	<string>PathAnimation.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3B3EB1EA3BADD3B42493710497920218EA63A924</key>

@@ -15,6 +15,8 @@
 		0419FC641B1E875A000410B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0419FC621B1E875A000410B4 /* LaunchScreen.xib */; };
 		0419FC701B1E875A000410B4 /* PathAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419FC6F1B1E875A000410B4 /* PathAnimationTests.m */; };
 		0419FC8D1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419FC8C1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m */; };
+		042E82071B202C3D00583C6B /* BtnAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E82061B202C3D00583C6B /* BtnAnimationView.m */; };
+		042E820A1B202D5100583C6B /* UITableView+MSWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E82091B202D5100583C6B /* UITableView+MSWave.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		0419FC6F1B1E875A000410B4 /* PathAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathAnimationTests.m; sourceTree = "<group>"; };
 		0419FC8B1B1EDC0B000410B4 /* UIButton+MSPathAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MSPathAnimation.h"; sourceTree = "<group>"; };
 		0419FC8C1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MSPathAnimation.m"; sourceTree = "<group>"; };
+		042E82051B202C3D00583C6B /* BtnAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnAnimationView.h; sourceTree = "<group>"; };
+		042E82061B202C3D00583C6B /* BtnAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnAnimationView.m; sourceTree = "<group>"; };
+		042E82081B202D5100583C6B /* UITableView+MSWave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MSWave.h"; sourceTree = "<group>"; };
+		042E82091B202D5100583C6B /* UITableView+MSWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MSWave.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				0419FC581B1E875A000410B4 /* AppDelegate.m */,
 				0419FC5A1B1E875A000410B4 /* ViewController.h */,
 				0419FC5B1B1E875A000410B4 /* ViewController.m */,
+				042E82081B202D5100583C6B /* UITableView+MSWave.h */,
+				042E82091B202D5100583C6B /* UITableView+MSWave.m */,
+				042E82051B202C3D00583C6B /* BtnAnimationView.h */,
+				042E82061B202C3D00583C6B /* BtnAnimationView.m */,
 				0419FC8B1B1EDC0B000410B4 /* UIButton+MSPathAnimation.h */,
 				0419FC8C1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m */,
 				0419FC5D1B1E875A000410B4 /* Main.storyboard */,
@@ -227,6 +237,8 @@
 				0419FC5C1B1E875A000410B4 /* ViewController.m in Sources */,
 				0419FC591B1E875A000410B4 /* AppDelegate.m in Sources */,
 				0419FC561B1E875A000410B4 /* main.m in Sources */,
+				042E82071B202C3D00583C6B /* BtnAnimationView.m in Sources */,
+				042E820A1B202D5100583C6B /* UITableView+MSWave.m in Sources */,
 				0419FC8D1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +434,7 @@
 				0419FC751B1E875A000410B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0419FC761B1E875A000410B4 /* Build configuration list for PBXNativeTarget "PathAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +443,7 @@
 				0419FC781B1E875A000410B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
