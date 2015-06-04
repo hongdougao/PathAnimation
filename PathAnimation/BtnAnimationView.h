@@ -10,4 +10,9 @@
 
 @interface BtnAnimationView : UIView
 
+@property (nonatomic,copy)void(^menuPushBlock)(void);
+@property (weak, nonatomic) IBOutlet UIButton *bottomBtn;
+
+@property (nonatomic)BOOL btnPush;
++ (BtnAnimationView *)creatBtnAnimationView;
 @end

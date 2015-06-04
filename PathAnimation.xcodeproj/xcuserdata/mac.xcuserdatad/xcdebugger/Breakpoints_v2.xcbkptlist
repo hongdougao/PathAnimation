@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PathAnimation/ViewController.m"
-            timestampString = "455095314.778035"
+            filePath = "PathAnimation/BtnAnimationView.m"
+            timestampString = "455103294.763246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-animationDidStop:finished:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PathAnimation/ViewController.m"
-            timestampString = "455095314.778035"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-changeBlackView"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-menuBtnPush:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

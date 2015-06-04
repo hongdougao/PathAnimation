@@ -29,8 +29,7 @@
     
     for (int i = 0; i < [arr count]; i ++) {
         NSIndexPath *path = arr[i];
-//        UITableViewCell *cell = [self cellForRowAtIndexPath:path];
-        NSArray *ar = @[path];
+         NSArray *ar = @[path];
         [self performSelector:@selector(startWaingAnimation:) withObject:ar];
     }
 }
@@ -41,17 +40,8 @@
     
     UITableViewCell *cell = [self cellForRowAtIndexPath:path];
     CGPoint originPoint = cell.center;
-//    cell.center = CGPointMake(originPoint.x +40 * path.row, originPoint.y);
-//    [UIView animateWithDuration:.5
-//                          delay:0
-//         usingSpringWithDamping:0.6
-//          initialSpringVelocity:0.0
-//                        options:UIViewAnimationOptionCurveEaseIn
-//                     animations:^{
-//                         cell.center = CGPointMake(originPoint.x + 40 * path.row, originPoint.y);
-//                     } completion:^(BOOL finished) {
-//                         
-                         [UIView animateWithDuration:.5
+ 
+                          [UIView animateWithDuration:.5 + path.row *0.2
                                                delay:0
                               usingSpringWithDamping:6
                                initialSpringVelocity:0.0
@@ -61,7 +51,7 @@
                                           } completion:^(BOOL finished) {
                                           
                                           }];
-    [UIView animateWithDuration:.5
+    [UIView animateWithDuration:.5+ path.row *0.2
                           delay:0.5
          usingSpringWithDamping:60
           initialSpringVelocity:0.0
@@ -71,6 +61,6 @@
                      } completion:^(BOOL finished) {
                          
                      }];
-//                     }];
+ 
 }
 @end
