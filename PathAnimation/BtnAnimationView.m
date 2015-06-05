@@ -41,9 +41,9 @@
     }
     
 }
--(UIView *)blackView{
+-(BlackView *)blackView{
     if (!_blackView) {
-        _blackView = [[UIView alloc]initWithFrame:self. frame];
+        _blackView = [[BlackView alloc]initWithFrame:self. frame];
         [_blackView setBackgroundColor:[UIColor blackColor]];
         
          
@@ -55,22 +55,7 @@
 -(void)btnAnimationViewOriginal{
     [self.blackView setAlpha:0.0];
  }
--(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    UIView *hitView = [super hitTest:point withEvent:event];
-    
-     if (hitView == self ) {
-        NSLog(@"self");
-        return nil;
-    
-    }else {
-        NSLog(@"hitView");
-         return hitView;
-    }
-}
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
 
-    return CGRectContainsPoint(self.bounds,point);
-}
 - (IBAction)menuBtnPush:(id)sender {
     if (self.menuPushBlock  ) {
         self.menuPushBlock();

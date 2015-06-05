@@ -19,6 +19,7 @@
 		042E820A1B202D5100583C6B /* UITableView+MSWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E82091B202D5100583C6B /* UITableView+MSWave.m */; };
 		042E820C1B204D9600583C6B /* BtnAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042E820B1B204D9600583C6B /* BtnAnimationView.xib */; };
 		042E820F1B2127F500583C6B /* HitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E820E1B2127F500583C6B /* HitTestView.m */; };
+		042E82141B21497D00583C6B /* BlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E82131B21497D00583C6B /* BlackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		042E820B1B204D9600583C6B /* BtnAnimationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BtnAnimationView.xib; sourceTree = "<group>"; };
 		042E820D1B2127F500583C6B /* HitTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitTestView.h; sourceTree = "<group>"; };
 		042E820E1B2127F500583C6B /* HitTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HitTestView.m; sourceTree = "<group>"; };
+		042E82121B21497D00583C6B /* BlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackView.h; sourceTree = "<group>"; };
+		042E82131B21497D00583C6B /* BlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				042E82051B202C3D00583C6B /* BtnAnimationView.h */,
 				042E82061B202C3D00583C6B /* BtnAnimationView.m */,
 				042E820B1B204D9600583C6B /* BtnAnimationView.xib */,
+				042E82121B21497D00583C6B /* BlackView.h */,
+				042E82131B21497D00583C6B /* BlackView.m */,
 				042E820D1B2127F500583C6B /* HitTestView.h */,
 				042E820E1B2127F500583C6B /* HitTestView.m */,
 				0419FC8B1B1EDC0B000410B4 /* UIButton+MSPathAnimation.h */,
@@ -249,6 +254,7 @@
 				0419FC561B1E875A000410B4 /* main.m in Sources */,
 				042E82071B202C3D00583C6B /* BtnAnimationView.m in Sources */,
 				042E820A1B202D5100583C6B /* UITableView+MSWave.m in Sources */,
+				042E82141B21497D00583C6B /* BlackView.m in Sources */,
 				0419FC8D1B1EDC0B000410B4 /* UIButton+MSPathAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

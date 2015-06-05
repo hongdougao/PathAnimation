@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BlackView.h"
 
 @interface BtnAnimationView : UIView
 
 @property (nonatomic,copy)void(^menuPushBlock)(void);
 
- @property (retain, nonatomic)UIView *blackView;
+ @property (retain, nonatomic)BlackView *blackView;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *bottomBtn;
