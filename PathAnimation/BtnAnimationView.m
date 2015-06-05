@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnD;
 @property (weak, nonatomic) IBOutlet UIButton *btnE;
 
-@property (retain, nonatomic)UIView *blackView;
 
 @end
 @implementation BtnAnimationView
@@ -28,6 +27,8 @@
 + (BtnAnimationView *)creatBtnAnimationView{
     BtnAnimationView *view = [[NSBundle mainBundle]loadNibNamed:@"BtnAnimationView" owner:nil options:nil][0];
     [view giveTagAndRadius];
+    [view setBtnPush:NO];
+    view.blackView.alpha = 0.0;
     return view;
 }
 
@@ -44,6 +45,8 @@
     if (!_blackView) {
         _blackView = [[UIView alloc]initWithFrame:self. frame];
         [_blackView setBackgroundColor:[UIColor blackColor]];
+        
+         
         [self  addSubview:_blackView];
         [self sendSubviewToBack:_blackView];
     }
@@ -51,7 +54,22 @@
 }
 -(void)btnAnimationViewOriginal{
     [self.blackView setAlpha:0.0];
+ }
+-(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView *hitView = [super hitTest:point withEvent:event];
+    
+     if (hitView == self ) {
+        NSLog(@"self");
+        return nil;
+    
+    }else {
+        NSLog(@"hitView");
+         return hitView;
+    }
+}
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
 
+    return CGRectContainsPoint(self.bounds,point);
 }
 - (IBAction)menuBtnPush:(id)sender {
     if (self.menuPushBlock  ) {
@@ -84,7 +102,10 @@
         
     }
     
-    [sender turnAroundSelfWithFromValue:fromFloat andToValue:toValue andRotation:rotation andDuration:0.1];
+    [sender turnAroundSelfWithFromValue:fromFloat
+                             andToValue:toValue
+                            andRotation:rotation
+                            andDuration:0.1];
     
     _btnPush = !_btnPush;
     
@@ -128,7 +149,12 @@
         
         
         
-        [UIView animateWithDuration:0.2 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0.0 options: UIViewAnimationOptionTransitionNone animations:^{
+        [UIView animateWithDuration:0.2
+                              delay:0.0
+             usingSpringWithDamping:0.6
+              initialSpringVelocity:0.0
+                            options: UIViewAnimationOptionTransitionNone
+                         animations:^{
             btn.frame = CGRectMake(CGRectGetMaxX(btn.frame) + positionX - 30/2, CGRectGetMaxY(btn.frame)  +positionY - 30/2, CGRectGetWidth(btn.frame), CGRectGetHeight(btn.frame));
             [btn turnAroundSelfWithFromValue:0.0 andToValue:M_PI * 2 andRotation:0 andDuration:0.3];
             
@@ -157,12 +183,20 @@
     NSArray *btnArr = @[_btnA,_btnB,_btnC,_btnD,_btnE];
     for (int i = 0; i < btnArr.count ; i++) {
         UIButton *btn = btnArr[i];
-        [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
-            [btn turnAroundSelfWithFromValue:0.0 andToValue:M_PI * 1  andRotation:0 andDuration:0.3];
+        [UIView animateWithDuration:0.6
+                              delay:0.0
+                            options:UIViewAnimationOptionTransitionNone
+                         animations:^{
+            [btn turnAroundSelfWithFromValue:0.0
+                                  andToValue:M_PI * 1
+                                 andRotation:0
+                                 andDuration:0.3];
         } completion:^(BOOL finished) {}];
         
         
-        [UIView animateWithDuration:0.1 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:0.1
+                              delay:0.3
+                            options:UIViewAnimationOptionCurveEaseOut animations:^{
             [btn setCenter:_bottomBtn.center];
         } completion:^(BOOL finished) {
             [self changeBlackView];
